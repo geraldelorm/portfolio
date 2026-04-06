@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Gerald G. — Software Engineer at Google." />
-  <title>Gerald G.</title>
+  <title>Gerald G. — Engineer. Builder. Writer.</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header>
-    <span class="wordmark">G.</span>
+    <span class="wordmark">GG.</span>
     <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
       <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
@@ -36,8 +36,15 @@
         <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
         <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="#" target="_blank" rel="noopener noreferrer">Substack</a>
       </nav>
+    </section>
+
+    <section class="writing">
+      <div class="section-header">
+        <h2>Writing</h2>
+        <a href="#" class="see-all" target="_blank" rel="noopener noreferrer">All posts →</a>
+      </div>
+      <ul class="post-list" id="post-list"></ul>
     </section>
 
     <section class="hotlist">
@@ -51,6 +58,7 @@
         <button class="tab"        role="tab" aria-selected="false" data-tab="tv">TV</button>
         <button class="tab"        role="tab" aria-selected="false" data-tab="movies">Movies</button>
         <button class="tab"        role="tab" aria-selected="false" data-tab="youtube">YouTube</button>
+        <button class="tab"        role="tab" aria-selected="false" data-tab="games">Games</button>
       </div>
 
       <div class="tab-panels">
@@ -69,6 +77,10 @@
 
         <div class="tab-panel" id="panel-youtube" role="tabpanel">
           <ul class="hotlist-items" id="list-youtube"></ul>
+        </div>
+
+        <div class="tab-panel" id="panel-games" role="tabpanel">
+          <ul class="hotlist-items" id="list-games"></ul>
         </div>
 
       </div>
