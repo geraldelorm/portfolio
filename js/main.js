@@ -1,3 +1,49 @@
+// ─── Writing / Blog Posts ────────────────────────────────────
+// To add a post: { title, date, summary, url }
+//   title   — post title
+//   date    — publish date string (e.g. "Apr 2026")
+//   summary — one-line description
+//   url     — link to the post (Substack, personal blog, etc.)
+
+const posts = [
+  {
+    title: "What I've Learned Building at Scale",
+    date: "Mar 2026",
+    summary: "Hard-won lessons from working on systems that serve millions.",
+    url: "#"
+  },
+  {
+    title: "The Craft of Code Review",
+    date: "Jan 2026",
+    summary: "How to give feedback that makes teams better, not just code.",
+    url: "#"
+  },
+  {
+    title: "On Being a New Engineer at a Big Company",
+    date: "Oct 2025",
+    summary: "What nobody tells you about joining a large tech org.",
+    url: "#"
+  },
+];
+
+// ─── Render Writing ──────────────────────────────────────────
+function renderPosts() {
+  const list = document.getElementById('post-list');
+  if (!list) return;
+
+  list.innerHTML = posts.map(post => `
+    <li class="post-item">
+      <a href="${post.url}" class="post-link" target="_blank" rel="noopener noreferrer">
+        <div class="post-main">
+          <span class="post-title">${post.title}</span>
+          <span class="post-summary">${post.summary}</span>
+        </div>
+        <span class="post-date">${post.date}</span>
+      </a>
+    </li>
+  `).join('');
+}
+
 // ─── Hotlist Data ────────────────────────────────────────────
 // To add/edit items: update the arrays below.
 // Each item: { title, meta, note, tag }
@@ -114,6 +160,33 @@ const hotlist = {
       tag: "Science"
     },
   ],
+
+  games: [
+    {
+      title: "Hollow Knight",
+      meta: "Team Cherry, 2017",
+      note: "The most atmospheric metroidvania ever made.",
+      tag: "Indie"
+    },
+    {
+      title: "The Last of Us Part I",
+      meta: "Naughty Dog, 2013",
+      note: "Storytelling that belongs in any medium.",
+      tag: "Action"
+    },
+    {
+      title: "Celeste",
+      meta: "Maddy Thorson & Noel Berry, 2018",
+      note: "Hard as hell. Tender as anything. Play it.",
+      tag: "Platformer"
+    },
+    {
+      title: "Disco Elysium",
+      meta: "ZA/UM, 2019",
+      note: "The most literary game ever written.",
+      tag: "RPG"
+    },
+  ],
 };
 
 // ─── Render Hotlist ──────────────────────────────────────────
@@ -186,6 +259,7 @@ function setYear() {
 // ─── Init ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  renderPosts();
   renderHotlist();
   initTabs();
   setYear();
