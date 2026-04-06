@@ -61,6 +61,7 @@ header {
 }
 
 .wordmark {
+  font-family: 'Space Grotesk', var(--font);
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -103,9 +104,10 @@ main {
 }
 
 .hero h1 {
+  font-family: 'Space Grotesk', var(--font);
   font-size: clamp(2.4rem, 6vw, 3.2rem);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
   line-height: 1.1;
   margin-bottom: 10px;
 }
@@ -157,6 +159,59 @@ main {
   color: var(--text);
 }
 
+/* ─── Projects Section ──────────────────────────────────────── */
+.projects {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+
+.project-link:hover {
+  opacity: 0.7;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.project-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.project-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+}
+
 /* ─── Writing Section ───────────────────────────────────────── */
 .writing {
   padding: 48px 0;
@@ -197,9 +252,10 @@ main {
   border-bottom: 1px solid var(--border);
 }
 
-.post-item:first-child {
-  border-top: 1px solid var(--border);
+.post-item:last-child {
+  border-bottom: none;
 }
+
 
 .post-link {
   display: flex;

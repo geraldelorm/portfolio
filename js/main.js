@@ -1,3 +1,49 @@
+// ─── Projects ────────────────────────────────────────────────
+// To add a project: { name, description, url, tag }
+//   name        — project name
+//   description — one-liner on what it does
+//   url         — link (GitHub, live site, etc.)
+//   tag         — stack or status label
+
+const projects = [
+  {
+    name: "Project Alpha",
+    description: "A tool that does something cool and useful for developers.",
+    url: "#",
+    tag: "TypeScript"
+  },
+  {
+    name: "Project Beta",
+    description: "An experiment in making something simple, fast, and open.",
+    url: "#",
+    tag: "Go"
+  },
+  {
+    name: "Project Gamma",
+    description: "Building in public — early stage but shipping fast.",
+    url: "#",
+    tag: "WIP"
+  },
+];
+
+// ─── Render Projects ─────────────────────────────────────────
+function renderProjects() {
+  const list = document.getElementById('project-list');
+  if (!list) return;
+
+  list.innerHTML = projects.map(p => `
+    <li class="project-item">
+      <a href="${p.url}" class="project-link" target="_blank" rel="noopener noreferrer">
+        <div class="project-main">
+          <span class="project-name">${p.name}</span>
+          <span class="project-desc">${p.description}</span>
+        </div>
+        ${p.tag ? `<span class="item-tag">${p.tag}</span>` : ''}
+      </a>
+    </li>
+  `).join('');
+}
+
 // ─── Writing / Blog Posts ────────────────────────────────────
 // To add a post: { title, date, summary, url }
 //   title   — post title
@@ -259,6 +305,7 @@ function setYear() {
 // ─── Init ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  renderProjects();
   renderPosts();
   renderHotlist();
   initTabs();
